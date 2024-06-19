@@ -19,7 +19,7 @@ output = args.output
 print(" [+] your Domain is {} and ip {}".format(domain,ip))
 print(" [+] getting whois info...")
 py = whois.query(domain=domain)
-#whois info found.
+#whois info.
 whois_result=''
 whois_result += "Name: {}".format(py.name) +'\n'
 whois_result += "Registrar: {} ".format(py.registrar) +'\n'
@@ -51,6 +51,7 @@ try:
 except:
     print("dns TXT lookup not found")
 print(dns_result)
+#geo location
 geo_result=''
 try:
     ip1=socket.gethostbyname(domain)
@@ -66,6 +67,7 @@ try:
 except:
     print("geoloction is not found")
     pass
+#shodan
 key = ""
 if ip:
     print("enter you api key")
