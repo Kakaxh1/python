@@ -28,19 +28,23 @@ def sniff_packet(iface):
         sniff(prn=process_packet, store=False)
 
 def process_packet(packet):
+    #sniff tcp traffic
     if packet.haslayer(TCP):
         src_ip = packet[IP].src
         dst_ip = packet[IP].dst
         scr_port = packet[TCP].sport
         dst_port = packet[TCP].dport
         print(f"{blue}{src_ip} is using port {scr_port} to connect to {dst_ip} at {dst_port}{reset}")
+        
     if packet.haslayer(HTTPRequest):
+        #sniff http request
         url = packet[HTTPRequest].Host.decode() + packet[HTTPRequest].Path.decode()
         method = packet[HTTPRequest].Method.decode()
         http_packet = packet[HTTPRequest].show()
         print(f"{yellow} {src_ip} is making a HTTP request to {url} with method {method} {reset}")
         print(f"{http_packet}")
         if packet.haslayer(Raw):
+            #output raw data
             print(f"[+]{red}{packet.getlayer(Raw).load.decode()} {reset}")
 
 
