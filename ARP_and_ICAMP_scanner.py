@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from scapy.all import sr1
 from scapy.layers.inet import IP, ICMP
 from scapy.all import srp
