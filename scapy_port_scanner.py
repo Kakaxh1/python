@@ -1,6 +1,5 @@
 import queue
-import socket
-import threading
+import time
 
 from scapy.all import *
 from scapy.layers.inet import IP, TCP, ICMP, UDP
@@ -12,7 +11,7 @@ print("Python simple port scanner")
 print("*" * 50)
 
 result = "port\tSTATUS\n"
-
+# arg parsing
 parser = argparse.ArgumentParser("Port scanner using Scapy")
 parser.add_argument("-d", "--target", help="Specify target IP", required=True)
 parser.add_argument("-p", "--ports", type=int, nargs="+", help="Specify starting ports (21 23 80 ...)")
@@ -21,7 +20,6 @@ parser.add_argument("-s", "--scantype", help="Scan type, syn/udp/xmas", required
 parser.add_argument("-t", "--Threading", help="Specify number thread")
 args = parser.parse_args()
 
-# arg parsing
 target = args.target
 
 try:
@@ -35,13 +33,14 @@ verbose = args.verbose
 port = args.ports
 start_port = port[0]
 end_port = port[1]
+
 try:
     thread_no = int(args.Threading)
 except:
     pass
     thread_no=''
 print("Target\t\t{}\nStarting port\t{}\nEnd port\t{}\nscan type\t{}".format(target, start_port, end_port,scantype))
-
+end_port += 1
 def print_ports(port, state):
     if not verbose:
         print("{} | {}".format(port, state))
@@ -79,7 +78,7 @@ def syn_scan(t_no):
             print_ports(port, "Unanswered")
     q.task_done()
 
-
+#udp scan
 def udp_scan(target, ports):
     global result
     print("udp scan on, {} with ports {}".format(target, ports))
@@ -129,7 +128,7 @@ def xmas_scan(target, ports):
 
 
 q = queue.Queue()
-for j in range(start_port, end_port + 1):
+for j in range(start_port, end_port):
     q.put(j)
 
 if args.ports:
@@ -138,12 +137,12 @@ else:
     # default port range
     ports = range(1, 1024)
 
+
 if thread_no:
     if scantype == "syn" or scantype == "s":
-        for i in range(thread_no):
+        for i in range(thread_no + 1):
             t = threading.Thread(target=syn_scan, args=(i,))
             t.start()
-
 
     elif scantype == "udp" or scantype == "u":
         for i in range(thread_no):
@@ -165,4 +164,5 @@ else:
         xmas_scan(1)
 
 with open(target + '.txt', 'w') as file:
+    time.sleep(1)
     file.write(result)
