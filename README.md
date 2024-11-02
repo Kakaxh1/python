@@ -2,23 +2,16 @@
 # Python project
 
 ### Project Title
-Brief description of the project and its primary goal.
+Python-based [Simple Port Scanner(https://github.com/bhavya290/python/blob/main/simple_port_scanner.py)]
 
 ### Introduction
-A concise overview of the project, including its purpose, scope, and target audience.
+This report details the development of a Python-based port scanner. The tool is designed to scan target IP addresses or domains for open ports.
 
 ### Technical Implementation
-A summary of the technical aspects of the project:
-* Programming Language: Python
-* Libraries and Frameworks: List of key libraries and frameworks used (e.g., NumPy, Pandas, TensorFlow, Flask)
-* Core Functionalities: Brief description of the main features and functionalities
-* Code Structure: Overview of the code organization and modularity
+The port scanner utilizes the socket library to establish connections to target ports. The script iterates through a specified port range, attempting to connect to each port. If a connection is successful, the port is considered open.
 
 ### Results and Evaluation
-* A summary of the project's outcomes and performance:
-* Key Results: Highlight the significant findings or achievements
-* Performance Metrics: Present relevant metrics (e.g., accuracy, precision, recall, execution time)
-* Limitations and Future Work: Discuss any limitations and potential future improvements
+The port scanner has been successfully tested against various IP addresses and domains. It accurately identifies open ports and provides informative output. The tool's simplicity and efficiency make it a valuable asset for network security professionals.
 
 ### Conclusion
-A brief summary of the project, its key contributions, and potential applications.
+The Python-based port scanner is a practical tool for network security assessments. Its straightforward implementation and effective functionality demonstrate the power of Python for network security tasks.
