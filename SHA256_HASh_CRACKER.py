@@ -7,7 +7,7 @@ if len(sys.argv) != 2:
     exit()
 
 reqd_hash = sys.argv[1]
-pass_file = "/usr/share/wordlists/rockyou.txt" #Define wordlist here
+pass_file = "/usr/share/wordlists/rockyou.txt" #Specify wordlist here
 attempts = 0
 
 with log.progress("Attempting to crack: {}!\n".format(reqd_hash)) as p:
