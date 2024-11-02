@@ -2,7 +2,7 @@
 # Python project
 
 ### Project Title
-Python-based [Simple Port Scanner(https://github.com/bhavya290/python/blob/main/simple_port_scanner.py)]
+Python-based [Simple Port Scanner](https://github.com/bhavya290/python/blob/main/simple_port_scanner.py)
 
 ### Introduction
 This report details the development of a Python-based port scanner. The tool is designed to scan target IP addresses or domains for open ports.
