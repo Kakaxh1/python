@@ -1,8 +1,8 @@
 from pwn import *
 import paramiko
 
-host = "127.0.0.1" #assign target ip address
-username = "bhavya" #Define username
+host = "127.0.0.1" #Specify target ip address
+username = "bhavya" #Specify username
 attempts = 0
 
 #read passwords file
