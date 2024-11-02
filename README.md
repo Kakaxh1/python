@@ -1,5 +1,5 @@
 
-# Python project
+# 1. Python project
 
 ### Project Title
 Python-based [Simple Port Scanner](https://github.com/bhavya290/python/blob/main/simple_port_scanner.py)
