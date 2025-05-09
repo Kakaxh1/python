@@ -24,29 +24,22 @@ This repo contains a bunch of **Python scripts** I wrote as part of my personal 
    https://github.com/Kakaxh1/python.git
 
 
-Install dependencies:
-pip install scapy requests
+2 **Install dependencies**:
 
+      pip install scapy requests
 
-
-Run a script:
+3 **Run a script**:
 Example for running ARP spoofer:
 python ARP_spoofer.py
 
-
-
-
-Purpose
+*Purpose*
 These scripts are just for practice. I built them to learn different hacking and security techniques using Python. They are not ready for production and should only be used for educational purposes. Don't go using them on anything you don’t have permission to test.
 
-License
+*License*
 Feel free to use and modify these scripts for learning. No guarantees, though — use at your own risk.
 
-Author
+*Author*
 bhvay morvadiya
 This is part of my journey to practice ethical hacking and penetration testing.
 
----
-
-This version is casual and to the point. It's more about showing what you've done rather than explaining it in a formal manner. How’s this?
 
