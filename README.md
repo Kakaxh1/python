@@ -1,4 +1,3 @@
-Got it! Here's a more informal and straight-to-the-point README, designed for showcasing your work in a resume-style manner:
 
 # Python Hacking Practice - Personal Projects
 
@@ -22,7 +21,7 @@ This repo contains a bunch of **Python scripts** I wrote as part of my personal 
 
 1. **Clone this repo**:
    ```bash
-   
+   https://github.com/Kakaxh1/python.git
 
 
 Install dependencies:
@@ -44,7 +43,7 @@ License
 Feel free to use and modify these scripts for learning. No guarantees, though — use at your own risk.
 
 Author
-[Your Name]
+bhvay morvadiya
 This is part of my journey to practice ethical hacking and penetration testing.
 
 ---
